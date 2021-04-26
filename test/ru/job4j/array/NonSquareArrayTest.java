@@ -14,7 +14,7 @@ public class NonSquareArrayTest {
         ByteArrayOutputStream out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
         NonSquareArray.main(null);
-        String ln = System.lineSeparator(); //
+        String ln = System.lineSeparator(); /* */
         String expected = "1" + ln + "1" + ln + "2" + ln + "2" + ln
                 + "3" + ln + "3" + ln + "4" + ln + "5" + ln + "6" + ln;
         assertThat(out.toString(), is(expected));
