@@ -3,20 +3,15 @@ package ru.job4j.array;
 public class Merge {
     public static int[] merge(int[] left, int[] right) {
         int[] rsl = new int[left.length + right.length];
-        int count = 0;
-        for (int i = 0; i < left.length; i++) {
-            rsl[i] = left[i];
-            count++;
+        int i = 0, j = 0, n = 0;
+        while (i < left.length && j < right.length) {
+            rsl[n++] = left[i] < right[j] ? left[i++] : right[j++];
         }
-        for (int j = 0; j < right.length; j++) {
-            rsl[count++] = right[j];
+        while (i < left.length) {
+            rsl[n++] = left[i++];
         }
-        for (int k = 0; k < rsl.length; k++) {
-            int min = MinDiapason.findMin(rsl, k, rsl.length - 1);
-            int index = FindLoop.indexOf(rsl, min, k, rsl.length - 1);
-            int temp = rsl[k];
-            rsl[k] = min;
-            rsl[index] = temp;
+        while (j < right.length) {
+            rsl[n++] = right[j++];
         }
         return rsl;
     }

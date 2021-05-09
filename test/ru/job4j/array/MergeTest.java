@@ -23,7 +23,7 @@ public class MergeTest {
         int[] result = Merge.merge(
                 new int[] {1, 3},
                 new int[] {2, 4}
-        );
+        ); //
         assertThat(result, is(expect));
     }
 
