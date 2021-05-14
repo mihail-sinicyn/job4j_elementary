@@ -2,10 +2,10 @@ package ru.job4j.array;
 
 public class SkipNegative {
     public static int[][] skip(int[][] array) {
-        for (int row = 0; row < array.length; row++) {
-            for (int cell = 0; cell < array[row].length; cell++) {
-                if (array[row][cell] < 0) {
-                    array[row][cell] = 0;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                if (array[i][j] < 0) {
+                    array[i][j] = 0;
                 }
             }
         }
