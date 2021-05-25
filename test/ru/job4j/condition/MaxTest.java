@@ -1,34 +1,26 @@
 package ru.job4j.condition;
 
-import org.junit.Assert;
 import org.junit.Test;
 
+import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+
 public class MaxTest {
-
     @Test
-    public void whenMax2To6Then6() {
-        int left = 2;
-        int right = 6;
-        int result = Max.max(left, right);
-        int expected = 6;
-        Assert.assertEquals(result, expected);
+    public void whenMax7() {
+        int result = Max.max(3, 7);
+        assertThat(result, is(7));
     }
 
     @Test
-    public void whenMax5To3Then5() {
-        int left = 5;
-        int right = 3;
-        int result = Max.max(left, right);
-        int expected = 5;
-        Assert.assertEquals(result, expected);
+    public void whenMax19() {
+        int result = Max.max(10, 4, 19);
+        assertThat(result, is(19));
     }
 
     @Test
-    public void whenMax7To7Then7() {
-        int left = 7;
-        int right = 7;
-        int result = Max.max(left, right);
-        int expected = 7;
-        Assert.assertEquals(result, expected);
+    public void whenMax4() {
+        int result = Max.max(1, 2, 3, 4);
+        assertThat(result, is(4));
     }
 }
