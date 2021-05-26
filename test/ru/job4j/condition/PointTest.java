@@ -1,8 +1,8 @@
 package ru.job4j.condition;
 
+import org.junit.Assert;
 import org.junit.Test;
-import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertThat;
+import static org.hamcrest.Matchers.closeTo;
 
 public class PointTest {
     @Test
@@ -10,7 +10,8 @@ public class PointTest {
         Point first = new Point(7, 8);
         Point second = new Point(3, 2);
         double result = first.distance(second);
-        assertThat(result, is(7.211102550927978));
+        double expected = 7.21;
+        Assert.assertThat(expected, closeTo(result, 0.01));
     }
 
     @Test
@@ -18,6 +19,7 @@ public class PointTest {
         Point first = new Point(3, 5, 1);
         Point second = new Point(4, 4, 4);
         double result = first.distance3d(second);
-        assertThat(result, is(3.3166247903554));
+        double expected = 3.31;
+        Assert.assertThat(expected, closeTo(result, 0.01));
     }
 }
